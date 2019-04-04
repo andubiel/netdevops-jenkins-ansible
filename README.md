@@ -61,6 +61,38 @@ Login with user netdevopsuser and password network
 
 Now add the first repository. 
 
+![Picture8](https://user-images.githubusercontent.com/11307137/55588739-96026f00-56fc-11e9-8645-daac5bfbfbb6.png)
+
+![Picture9](https://user-images.githubusercontent.com/11307137/55588833-ccd88500-56fc-11e9-92b7-58755f3bdb0d.png)
+
+Remove git from netdevops-ansible directory to remove the cloned GIT configuration fro GITHUB that was pulled down and start/initiialize a new repository with the GOGs repo.
+
+Try to be conservitive on the cut and paste. :)
+
+```
+[developer@centos netdevops-ansible]$ rm -rf .git
+touch README.md
+git init
+git config --global user.email netdevopsuser@netdevopslocal
+git config --global user.name netdevopsuser
+git add README.md
+git commit -m "first commit"
+git remote add origin http://198.18.134.48:3000/netdevopsuser/netdevops-ansible.git
+git config --global push.default matching
+git add --all
+git commit -m "files"
+git push -u origin master
+Username for 'http://198.18.134.48:3000': netdevopsuser
+Password for 'http://netdevopsuser@198.18.134.48:3000': network
+#Output * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+```
+Validate that the files are now viewable from GoGs.
+http://198.18.134.48:3000/netdevopsuser/netdevops-ansible
+
+
+
+
 
 
 
