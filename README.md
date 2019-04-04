@@ -38,6 +38,12 @@ docker run --name=gogs -p 10022:22 -p 3000:3000 -v gogs-data:/data gogs/gogs
 When finished type $ ctrl c to stop terminal and then start the Docker container.
 docker start gogs
 ```
+Setup GOGs from the web GUI. http://198.18.134.48:3000
+
+Change Database to sqlite3.
+![Picture4](https://user-images.githubusercontent.com/11307137/55587330-1c1cb680-56f9-11e9-949c-867728d5f92d.png)
+Change GOGs URL to 198.18 134.48 if not already displaying and then start GOGs
+![Picture5](https://user-images.githubusercontent.com/11307137/55587483-6ef66e00-56f9-11e9-9ece-5dd2d486ef59.png)
 
 
 
