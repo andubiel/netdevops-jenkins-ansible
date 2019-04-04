@@ -43,9 +43,25 @@ Setup GOGs from the web GUI. http://198.18.134.48:3000
 Change Database to sqlite3.
 ![Picture4](https://user-images.githubusercontent.com/11307137/55587330-1c1cb680-56f9-11e9-949c-867728d5f92d.png)
 
-Change GOGs URL to 198.18 134.48 if not already displaying and then start GOGs.
+Change GOGs URL to 198.18 134.48/3000 if not already displaying and then start GOGs.
 
 ![Picture5](https://user-images.githubusercontent.com/11307137/55587483-6ef66e00-56f9-11e9-9ece-5dd2d486ef59.png)
+
+Next sign-up for a local account on the GOGs server. Use netdevopsuser for user and network as the password.
+Note the following information for later:
+```
+git config --global user.email netdevopsuser@netdevops.local
+git config --global user.name netdevopsuser
+```
+![Picture6](https://user-images.githubusercontent.com/11307137/55587694-eaf0b600-56f9-11e9-91fa-dd4b180f858f.png)
+
+Login with user netdevopsuser and password network
+
+![Picture7](https://user-images.githubusercontent.com/11307137/55587755-170c3700-56fa-11e9-82ef-5374eb84c947.png)
+
+Now add the first repository. 
+
+
 
 
 
