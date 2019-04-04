@@ -90,6 +90,89 @@ Branch master set up to track remote branch master from origin.
 Validate that the files are now viewable from GoGs.
 http://198.18.134.48:3000/netdevopsuser/netdevops-ansible
 
+![Picture10](https://user-images.githubusercontent.com/11307137/55589203-ac5cfa80-56fd-11e9-8010-b85e47527e89.png)
+
+Now lets start a new branch to make changes to the files in a safe sandbox.
+```
+[developer@centos netdevops-ansible]$git checkout -b dev
+#Output Switched to a new branch 'dev'
+git push -u origin dev
+#Output Total 0 (delta 0), reused 0 (delta 0)
+
+Username for 'http://198.18.134.48:3000': netdevopsuser
+Password for 'http://netdevopsuser@198.18.134.48:3000': network
+
+To http://198.18.134.48:3000/netdevopsuser/netdevops-ansible.git
+ #Output * [new branch]      dev -> dev
+Branch dev set up to track remote branch dev from origin.
+```
+Verify there is now a dev branch on the GOGs repo.
+
+![Picture11](https://user-images.githubusercontent.com/11307137/55589385-183f6300-56fe-11e9-8841-fa552047e7bb.png)
+
+![Picture12](https://user-images.githubusercontent.com/11307137/55589439-360cc800-56fe-11e9-9cc4-6be8ea45f212.png)
+
+# Install Jenkins 
+We will install Jenkins directly to the Centos "DevBox".
+
+1st we need to install some dependencies with Java, Tomcat and Jenkins 
+
+```
+[developer@centos]$ sudo yum install java-1.8.0-openjdk
+sudo yum install wget -y
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+sudo yum install Jenkins -y
+[developer@centos ~]$sudo service jenkins start
+```
+Now use the url  http://198.18.134.48:8080 to setup Jenkins.
+
+![Picture13](https://user-images.githubusercontent.com/11307137/55589638-bc290e80-56fe-11e9-8dfd-45a0b251261f.png)
+
+Use Terminal to access your temporary admin password.
+```
+[developer@centos ~]$sudo more /var/lib/jenkins/secrets/initialAdminPassword
+#Output Copy ---> 51d0d1f031ae48fbac3dec8f27ccc917
+
+```
+Install recommended plugins.
+![Picture14](https://user-images.githubusercontent.com/11307137/55590062-e0d1b600-56ff-11e9-9f98-ec63dbf3ec4d.png)
+
+Username= netdevopsuser
+Pass=network
+Email= netdevopsuser@netdevops.local
+Save an continue
+
+![Picture15](https://user-images.githubusercontent.com/11307137/55590132-0bbc0a00-5700-11e9-8594-129bba34fc47.png)
+
+Save and Finish and Start using Jenkins.
+
+![Picture16](https://user-images.githubusercontent.com/11307137/55590237-4d4cb500-5700-11e9-8f25-d5155fa4b356.png)
+
+Goto website http://198.18.134.48:8080 
+Login and click manage jenkins
+
+![Picture17](https://user-images.githubusercontent.com/11307137/55590285-6eada100-5700-11e9-9b43-ce31f82eecd5.png)
+
+Click manage plugins
+
+![Picture18](https://user-images.githubusercontent.com/11307137/55590344-98ff5e80-5700-11e9-845e-0ad661494eaf.png)
+
+From the available plugins find and install without restart the gogs, ansible, and Cisco Spark plugins.
+
+![Picture19](https://user-images.githubusercontent.com/11307137/55590431-e1b71780-5700-11e9-9639-7a09915b775d.png)
+
+![Picture20](https://user-images.githubusercontent.com/11307137/55590475-feebe600-5700-11e9-88c2-aa2426d3edbe.png)
+
+Create a new Job from new Item.
+
+
+
+
+
+
+
+
 
 
 
