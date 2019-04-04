@@ -165,6 +165,39 @@ From the available plugins find and install without restart the gogs, ansible, a
 ![Picture20](https://user-images.githubusercontent.com/11307137/55590475-feebe600-5700-11e9-88c2-aa2426d3edbe.png)
 
 Create a new Job from new Item.
+![Picture21](https://user-images.githubusercontent.com/11307137/55590545-30fd4800-5701-11e9-9e25-8db596d0f255.png)
+
+Configure a new Pipeline job, and click OK.
+
+![Picture22](https://user-images.githubusercontent.com/11307137/55590641-74f04d00-5701-11e9-9f12-c1e0738ecac8.png)
+
+Scroll through to make the following configuration selections and click save.
+
+![Picture23](https://user-images.githubusercontent.com/11307137/55590698-a0733780-5701-11e9-88cb-5bc28e3013ea.png)
+![Picture24](https://user-images.githubusercontent.com/11307137/55590734-baad1580-5701-11e9-85a5-afd6ab52d9f8.png)
+
+Repository URL: http://198.18.134.48:3000/netdevopsuser/netdevops-ansible.git
+Repository Browser = GOGs
+
+# Cisco Webex Teams "Spark"
+
+Spark credentials. We need to convert our Spark Bot Token created earlier to a Jenkins credential.
+1st Select Credentials:
+
+![Picture25](https://user-images.githubusercontent.com/11307137/55590982-6f473700-5702-11e9-9547-76c94db65d05.png)
+
+Global Credential, click add credentials:
+![Picture26](https://user-images.githubusercontent.com/11307137/55591060-97cf3100-5702-11e9-8da6-f1a7ae67e595.png)
+
+You nw need to paste in your Spark bot token saved earlier and click ok to view the ID which becomes the credentialsId we use for spark in the Pipeline:
+
+![Picture27](https://user-images.githubusercontent.com/11307137/55591139-c3eab200-5702-11e9-8fe5-116a6524ace2.png)
+![Picture28](https://user-images.githubusercontent.com/11307137/55591175-d95fdc00-5702-11e9-9bf5-1248d5d552ae.png)
+
+Save your Sparkbot ID
+
+# GOGs and Jenkins Integration
+At this point we can prepare the Gogs server to integrate with the Jenkins server. Click on settings.
 
 
 
