@@ -200,6 +200,22 @@ Save your Sparkbot ID
 # GOGs and Jenkins Integration
 At this point we can prepare the Gogs server to integrate with the Jenkins server. Click on settings.
 
+![Picture29](https://user-images.githubusercontent.com/11307137/55593153-d962da80-5708-11e9-9440-6ca987aad600.png)
+
+Click webhooks:
+
+![Picture30](https://user-images.githubusercontent.com/11307137/55593198-01523e00-5709-11e9-96b1-c2756eba1a7d.png)
+
+Add webhook + Gogs:
+
+![Picture31](https://user-images.githubusercontent.com/11307137/55595701-20ee6400-5713-11e9-8685-80422eda138c.png)
+
+Add webhook:
+
+![Picture32](https://user-images.githubusercontent.com/11307137/55595779-61e67880-5713-11e9-8222-e5830ba98e55.png)
+
+
+
 
 
 
