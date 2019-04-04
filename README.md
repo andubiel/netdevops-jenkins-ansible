@@ -165,6 +165,7 @@ From the available plugins find and install without restart the gogs, ansible, a
 ![Picture20](https://user-images.githubusercontent.com/11307137/55590475-feebe600-5700-11e9-88c2-aa2426d3edbe.png)
 
 Create a new Job from new Item.
+
 ![Picture21](https://user-images.githubusercontent.com/11307137/55590545-30fd4800-5701-11e9-9e25-8db596d0f255.png)
 
 Configure a new Pipeline job, and click OK.
