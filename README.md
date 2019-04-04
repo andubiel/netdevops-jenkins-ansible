@@ -17,7 +17,30 @@ $ ssh developer@198.18.134.48  pass = C1sco12345 or Remote Desktop from the foll
 
 ![Picture3](https://user-images.githubusercontent.com/11307137/55586148-3ef99b80-56f6-11e9-80e6-3e99e98388d5.png)
 
-# Setup Centos "DevBox"
+# Setup the Centos "DevBox"
+Carefull, If cut and pasting try to do one or two lines at a time and verify ok. Scripting the following would make more sense but we would like you to see the steps in action for the first run through.  
+```
+ls
+code  Desktop  dev_box_background.jpg  Downloads  sync_log.txt  sync_version  thinclient_drives
+cd code
+git clone https://github.com/andubiel/netdevops-ansible.git
+cd netdevops-ansible/
+sudo pip install -r requirements.txt
+sudo systemctl disable firewalld
+sudo systemctl stop firewalld
+```
+# Install GOGs
+Install docker container for Go for Git (GOGs). This will provide a Github like repository for your lab environment.
+```
+[developer@centos netdevops-ansible]$ docker volume create --name gogs-data
+docker run --name=gogs -p 10022:22 -p 3000:3000 -v gogs-data:/data gogs/gogs
+
+When finished type $ ctrl c to stop terminal and then start the Docker container.
+docker start gogs
+```
+
+
+
 
 
 
