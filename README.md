@@ -68,8 +68,6 @@ Now add the first repository.
 
 <img width="616" alt="Screenshot 2019-04-05 13 50 43" src="https://user-images.githubusercontent.com/11307137/55646693-da981400-57a9-11e9-9c89-3f9daf67b5e3.png">
 
-![Picture9](https://user-images.githubusercontent.com/11307137/55588833-ccd88500-56fc-11e9-92b7-58755f3bdb0d.png)
-
 Remove git from netdevops-jenkins-ansible directory to remove the cloned GIT configuration fro GITHUB that was pulled down and start/initiialize a new repository with the GOGs repo.
 
 Try to be conservitive on the cut and paste. :)
