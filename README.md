@@ -328,11 +328,24 @@ Add webhook:
 ![Picture32](https://user-images.githubusercontent.com/11307137/55595779-61e67880-5713-11e9-8222-e5830ba98e55.png)
 
 # Run Pipeline and review results
-Make sure the pipeline runs successfully with reception of expected notifications.
+Make sure the pipeline runs successfully with reception of expected notifications. In order to run our pipeline we need to make a change to code in our GOGs repository. The Jenkinfile will kickoff the pipeline. We will add a comment line to the Jenkinsfile and then commit our change to GIT.
 
-Build Now
-<img width="461" alt="Screenshot 2019-04-04 23 15 16" src="https://user-images.githubusercontent.com/11307137/55601580-894b3e80-572f-11e9-9bfb-bfefc8e3c925.png">
+```
+[developer@centos netdevops-ansible]$ vim Jenkinsfile
 
+node {
+// Added Comment file here
+// Clean workspace before doing anything
+esc 
+:wq!
+
+git add Jenkinsfile
+git commit -m Jenkinsfile
+git push 
+Username for 'http://198.18.134.48:3000': netdevopsuser
+Password for 'http://netdevopsuser@198.18.134.48:3000':
+```
+As an alterntive you can select Build Now from Jenkins to kickoff pipeline.
 Check Build
 
 <img width="671" alt="Screenshot 2019-04-04 23 17 38" src="https://user-images.githubusercontent.com/11307137/55601658-fb238800-572f-11e9-9d5a-8df1299fe23f.png">
@@ -341,9 +354,9 @@ Open Console
 
 <img width="948" alt="Screenshot 2019-04-04 23 20 21" src="https://user-images.githubusercontent.com/11307137/55601733-4178e700-5730-11e9-93d1-cd4d8584ed1d.png">
 
-Check Webex Team Space "Spark"
+Check Webex Team Space "Spark". You will see three sets of notifications. The first set refers to the Dev code changes, while the second set refers to Production and the third verifies the dev branch  was sucesseffully merged to master.
 
-<img width="627" alt="Screenshot 2019-04-04 23 21 34" src="https://user-images.githubusercontent.com/11307137/55601765-68cfb400-5730-11e9-8fc8-33bf5584217d.png">
+<img width="585" alt="Screenshot 2019-04-04 23 48 12" src="https://user-images.githubusercontent.com/11307137/55602532-214b2700-5734-11e9-8f0b-2d4d0f574693.png">
 
 
 
