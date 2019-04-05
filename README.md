@@ -330,7 +330,8 @@ Add webhook:
 # Run Pipeline and review results
 Make sure the pipeline runs successfully by reviwing the console output and Cisco Spark Bot by receiving notifications. In order to run the pipeline we need to initiate the pipeline by making a change to code in our GOGs repository. The Jenkinfile will kickoff the pipeline when dedecting changes. We will add a comment line to the Jenkinsfile and then commit our change to GIT to kickoff the pipeline. As an alterntive you can simply select Build Now from the Jenkins GUI to kickoff a pipeline.
 
-Check Build
+As an alterntive you can select Build Now from Jenkins to kickoff pipeline.
+Check Build.
 
 ```
 [developer@centos netdevops-ansible]$ vim Jenkinsfile
@@ -347,7 +348,6 @@ git push
 Username for 'http://198.18.134.48:3000': netdevopsuser
 Password for 'http://netdevopsuser@198.18.134.48:3000':
 ```
-As an alterntive you can select Build Now from Jenkins to kickoff pipeline.
 Check Build
 
 <img width="671" alt="Screenshot 2019-04-04 23 17 38" src="https://user-images.githubusercontent.com/11307137/55601658-fb238800-572f-11e9-9d5a-8df1299fe23f.png">
