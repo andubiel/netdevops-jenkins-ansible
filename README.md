@@ -28,8 +28,8 @@ Carefull, If cut and pasting try to do one or two lines at a time and verify ok.
 ls
 code  Desktop  dev_box_background.jpg  Downloads  sync_log.txt  sync_version  thinclient_drives
 cd code
-git clone https://github.com/andubiel/netdevops-ansible.git
-cd netdevops-ansible/
+https://github.com/andubiel/netdevops-jenkins-ansible.git
+cd netdevops-jenkins-ansible/
 sudo pip install -r requirements.txt
 sudo systemctl disable firewalld
 sudo systemctl stop firewalld
@@ -70,19 +70,19 @@ Now add the first repository.
 
 ![Picture9](https://user-images.githubusercontent.com/11307137/55588833-ccd88500-56fc-11e9-92b7-58755f3bdb0d.png)
 
-Remove git from netdevops-ansible directory to remove the cloned GIT configuration fro GITHUB that was pulled down and start/initiialize a new repository with the GOGs repo.
+Remove git from netdevops-jenkins-ansible directory to remove the cloned GIT configuration fro GITHUB that was pulled down and start/initiialize a new repository with the GOGs repo.
 
 Try to be conservitive on the cut and paste. :)
 
 ```
-[developer@centos netdevops-ansible]$ rm -rf .git
+[developer@centos netdevops-jenkins-ansible]$ rm -rf .git
 touch README.md
 git init
 git config --global user.email netdevopsuser@netdevopslocal
 git config --global user.name netdevopsuser
 git add README.md
 git commit -m "first commit"
-git remote add origin http://198.18.134.48:3000/netdevopsuser/netdevops-ansible.git
+git remote add origin http://198.18.134.48:3000/netdevopsuser/netdevops-jenkins-ansible.git
 git config --global push.default matching
 git add --all
 git commit -m "files"
@@ -99,7 +99,7 @@ http://198.18.134.48:3000/netdevopsuser/netdevops-ansible
 
 Now lets start a new branch to make changes to the files in a safe sandbox.
 ```
-[developer@centos netdevops-ansible]$git checkout -b dev
+[developer@centos netdevops-jenkins-ansible]$git checkout -b dev
 #Output Switched to a new branch 'dev'
 git push -u origin dev
 #Output Total 0 (delta 0), reused 0 (delta 0)
@@ -107,7 +107,7 @@ git push -u origin dev
 Username for 'http://198.18.134.48:3000': netdevopsuser
 Password for 'http://netdevopsuser@198.18.134.48:3000': network
 
-To http://198.18.134.48:3000/netdevopsuser/netdevops-ansible.git
+To http://198.18.134.48:3000/netdevopsuser/netdevops-jenkins-ansible.git
  #Output * [new branch]      dev -> dev
 Branch dev set up to track remote branch dev from origin.
 ```
@@ -183,7 +183,7 @@ Scroll through to make the following configuration selections and click save.
 ![Picture23](https://user-images.githubusercontent.com/11307137/55590698-a0733780-5701-11e9-88cb-5bc28e3013ea.png)
 ![Picture24](https://user-images.githubusercontent.com/11307137/55590734-baad1580-5701-11e9-85a5-afd6ab52d9f8.png)
 
-Repository URL: http://198.18.134.48:3000/netdevopsuser/netdevops-ansible.git
+Repository URL: http://198.18.134.48:3000/netdevopsuser/netdevops-jenkins-ansible.git
 Repository Browser = GOGs
 
 # Cisco Webex Teams "Spark"
@@ -251,7 +251,7 @@ esc
 ```
 From an editor (VIM, ATOM, Notebook++ etc) modifiy the Prod Notification to include your Sparkbot data
 ```
-[developer@centos netdevops-ansible]$cd ansible-04-mission/
+[developer@centos netdevops-jenkins-ansible]$cd ansible-04-mission/
 [developer@centos ansible-04-mission]$ls
 04-lab_cleanup.yaml  netdevops_dev.yaml   notification-dev.retry  notification-prod.yaml
 netdevops_dev.retry  netdevops_prod.yaml  notification-dev.yaml
@@ -266,11 +266,11 @@ vim notification-prod.yaml
 esc
 :wq!
 ```
-CD back to netdevops-ansible and edit Jenkins file to edit Notifications in pipeline.
+CD back to netdevops-jenkins-ansible and edit Jenkins file to edit Notifications in pipeline.
 
 ```
 [developer@centos ansible-04-mission]$cd ..
-[developer@centos netdevops-ansible]$ls
+[developer@centos netdevops-jenkins-ansible]$ls
 1  12  ansible-04-mission  ansible.cfg  group_vars  hosts  Jenkinsfile  README.md  requirements.txt
 vim Jenkinsfile
 
@@ -289,11 +289,11 @@ Commit changes to GIT
 [developer@centos ansible-04-mission]$git add notification-dev.yaml
 $git add notification-prod.yaml
 
-[developer@centos netdevops-ansible]$git add Jenkinsfile
-[developer@centos netdevops-ansible]$git commit -m "notifications"
+[developer@centos netdevops-jenkins-ansible]$git add Jenkinsfile
+[developer@centos netdevops-jenkins-ansible]$git commit -m "notifications"
 [dev e8552d9] notifications
  3 files changed, 5 insertions(+), 5 deletions(-)
-[developer@centos netdevops-ansible]$git push
+[developer@centos netdevops-jenkins-ansible]$git push
 Counting objects: 11, done.
 Delta compression using up to 2 threads.
 Compressing objects: 100% (6/6), done.
@@ -301,10 +301,10 @@ Writing objects: 100% (6/6), 714 bytes | 0 bytes/s, done.
 Total 6 (delta 5), reused 0 (delta 0)
 Username for 'http://198.18.134.48:3000': netdevopsuser
 Password for 'http://netdevopsuser@198.18.134.48:3000':
-To http://198.18.134.48:3000/netdevopsuser/netdevops-ansible.git
+To http://198.18.134.48:3000/netdevopsuser/netdevops-jenkins-ansible.git
    4380055..e8552d9  dev -> dev
  ! [rejected]        master -> master (non-fast-forward)
-error: failed to push some refs to 'http://198.18.134.48:3000/netdevopsuser/netdevops-ansible.git'
+error: failed to push some refs to 'http://198.18.134.48:3000/netdevopsuser/netdevops-jenkins-ansible.git'
 hint: Updates were rejected because a pushed branch tip is behind its remote
 hint: counterpart. Check out this branch and merge the remote changes
 
@@ -334,7 +334,7 @@ Make sure the pipeline runs successfully by reviewing the console output and Cis
 Make changes to Jenkinsfile.
 
 ```
-[developer@centos netdevops-ansible]$ vim Jenkinsfile
+[developer@centos netdevops-jenkins-ansible]$ vim Jenkinsfile
 
 node {
 // Added Comment file here
