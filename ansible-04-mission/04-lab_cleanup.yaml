@@ -1,7 +1,9 @@
 #simple IOS config in ansible
 ---
 - name: Intro to Ansible Mission
-  hosts: iosxe
+  hosts: 
+    - iosxe_dev
+    - iosxe_prod
   gather_facts: no
 
   tasks:

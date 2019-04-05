@@ -1,0 +1,18 @@
+# Spark Notification
+---
+- name: Notification
+  hosts: localhost
+  gather_facts: no
+
+
+  tasks:
+
+  - name: Cisco Spark - Text Message to a Room
+    cisco_spark:
+      recipient_type: roomId
+      #recipient_id: "{{ room_id }}"
+      recipient_id: "Y2lzY29zcGFyazovL3VzL1JPT00vZTg4Y2M4NjAtMTA0ZS0zMmRjLWEzY2YtMTcxNTcwNzRkMGMw"
+      message_type: text
+      #personal_token: "{{ token }}"
+      personal_token: "MDRlNjc0OTItMjIyYy00YTc3LWE3MWQtNWE2NzNjNzVkN2ZlZjk5YzVmYTAtOWRm_PF84_1eb65fdf-9643-417f-9974-ad72cae0e10f"
+      message: "The Dev Build was Successful - Merge to Master"
