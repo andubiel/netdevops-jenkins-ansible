@@ -202,27 +202,113 @@ Description: DevNet CICD Lab Bot
 
 ![spark_bot3](https://user-images.githubusercontent.com/11307137/55596070-d66de700-5714-11e9-8465-c0ea1016030a.jpg)
 
-After clicking "Create Bot", you'll be presented with the Bot Details. At the bottom of the details is the "Bot's Access Token". Click the button to "Copy" the token. Note: Do not mistakingly copy the "Bot ID" from the top of the page.
+After clicking "Create Bot", you'll be presented with the Bot Details. At the bottom of the details is the "Bot's Access Token". Click the button to "Copy" the token.  Make sure to note the Token and not mix up with BOT ID.
 
 ![spark_bot4](https://user-images.githubusercontent.com/11307137/55596140-277ddb00-5715-11e9-91ec-cb240df85e4e.jpg)
 
 Paste token into a text file for safe keeping!
 
+Next we need to search developer.webex.com to glean the RoomId from our bot. From Room scroll down until you find the Bot RoomId.
 
-Spark credentials. We need to convert our Spark Bot Token created earlier to a Jenkins credential.
-1st Select Credentials:
+<img width="955" alt="Screenshot 2019-04-04 23 07 01" src="https://user-images.githubusercontent.com/11307137/55601328-640a0080-572e-11e9-925c-9b19faf40970.png">
+
+Next we need to search developer.webex.com to glean the RoomId from our bot. From Room run GET v1/rooms/ and scroll down until you find the Bot RoomId. Copy the ID
+
+<img width="500" alt="Screenshot 2019-04-04 23 11 04" src="https://user-images.githubusercontent.com/11307137/55601446-f1e5eb80-572e-11e9-8d8d-24bc85226155.png">
+
+Spark credentials. We need to convert our Spark Bot Token created earlier into a Jenkins credential.
+1st Select Credentials from the left panel on the main Jenkins dashboard:
 
 ![Picture25](https://user-images.githubusercontent.com/11307137/55590982-6f473700-5702-11e9-9547-76c94db65d05.png)
 
-Global Credential, click add credentials:
+Under Stores scoped to Jenkins click the Global Credential, and then click add credentials to the left:
+
 ![Picture26](https://user-images.githubusercontent.com/11307137/55591060-97cf3100-5702-11e9-8da6-f1a7ae67e595.png)
 
-You nw need to paste in your Spark bot token saved earlier and click ok to view the ID which becomes the credentialsId we use for spark in the Pipeline:
+You now need to paste in your Spark bot token saved earlier and click ok to view the ID which becomes the credentialsId we use for spark in the Pipeline:
 
 ![Picture27](https://user-images.githubusercontent.com/11307137/55591139-c3eab200-5702-11e9-8fe5-116a6524ace2.png)
 ![Picture28](https://user-images.githubusercontent.com/11307137/55591175-d95fdc00-5702-11e9-9bf5-1248d5d552ae.png)
 
-Save your Sparkbot ID
+Save your Sparkbot ID it will be used later.
+
+From an editor (VIM, ATOM, Notebook++ etc) modifiy the Dev Notification to include your Sparkbot data
+```
+[developer@centos netdevops-ansible]$cd ansible-04-mission/
+[developer@centos ansible-04-mission]$ls
+04-lab_cleanup.yaml  netdevops_dev.yaml   notification-dev.retry  notification-prod.yaml
+netdevops_dev.retry  netdevops_prod.yaml  notification-dev.yaml
+vim notification-dev.yaml
+- name: Cisco Spark - Text Message to a Room
+    cisco_spark:
+      recipient_type: roomId
+      recipient_id: "Your BOT Room ID"
+      message_type: text
+      personal_token: "Your BOT Token"
+      message: "The Dev Build was Successful - Committing Dev to Master"
+esc
+:wq!
+```
+From an editor (VIM, ATOM, Notebook++ etc) modifiy the Prod Notification to include your Sparkbot data
+```
+[developer@centos netdevops-ansible]$cd ansible-04-mission/
+[developer@centos ansible-04-mission]$ls
+04-lab_cleanup.yaml  netdevops_dev.yaml   notification-dev.retry  notification-prod.yaml
+netdevops_dev.retry  netdevops_prod.yaml  notification-dev.yaml
+vim notification-prod.yaml
+- name: Cisco Spark - Text Message to a Room
+    cisco_spark:
+      recipient_type: roomId
+      recipient_id: "Your BOT Room ID"
+      message_type: text
+      personal_token: "Your BOT Token"
+      message: "The Dev Build was Successful - Committing Dev to Master"
+esc
+:wq!
+```
+CD back to netdevops-ansible and edit Jenkins file to edit Notifications in pipeline.
+
+```
+[developer@centos ansible-04-mission]$cd ..
+[developer@centos netdevops-ansible]$ls
+1  12  ansible-04-mission  ansible.cfg  group_vars  hosts  Jenkinsfile  README.md  requirements.txt
+vim Jenkinsfile
+
+  stage ('Notification Details') {
+            sparkSend credentialsId: 'Change to credential Id created in Jenkins', message: '[$JOB_NAME]($BUILD_URL)', messageType: 'text', spaceList: [[spaceId: ' Change to your Sparkbot Room ID', spaceName: 'NetDevOps CICD Bot']]
+         }
+    } catch (err) {
+        currentBuild.result = 'FAILED'
+esc
+:wq!
+
+```
+Commit changes to GIT
+
+```
+[developer@centos ansible-04-mission]$git add notification-dev.yaml
+$git add notification-prod.yaml
+
+[developer@centos netdevops-ansible]$git add Jenkinsfile
+[developer@centos netdevops-ansible]$git commit -m "notifications"
+[dev e8552d9] notifications
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+[developer@centos netdevops-ansible]$git push
+Counting objects: 11, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 714 bytes | 0 bytes/s, done.
+Total 6 (delta 5), reused 0 (delta 0)
+Username for 'http://198.18.134.48:3000': netdevopsuser
+Password for 'http://netdevopsuser@198.18.134.48:3000':
+To http://198.18.134.48:3000/netdevopsuser/netdevops-ansible.git
+   4380055..e8552d9  dev -> dev
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'http://198.18.134.48:3000/netdevopsuser/netdevops-ansible.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and merge the remote changes
+
+```
 
 # GOGs and Jenkins Integration
 At this point we can prepare the Gogs server to integrate with the Jenkins server. Click on settings.
@@ -240,6 +326,31 @@ Add webhook + Gogs:
 Add webhook:
 
 ![Picture32](https://user-images.githubusercontent.com/11307137/55595779-61e67880-5713-11e9-8222-e5830ba98e55.png)
+
+# Run Pipeline and review results
+Make sure the pipeline runs successfully with reception of expected notifications.
+
+Build Now
+<img width="461" alt="Screenshot 2019-04-04 23 15 16" src="https://user-images.githubusercontent.com/11307137/55601580-894b3e80-572f-11e9-9bfb-bfefc8e3c925.png">
+
+Check Build
+
+<img width="671" alt="Screenshot 2019-04-04 23 17 38" src="https://user-images.githubusercontent.com/11307137/55601658-fb238800-572f-11e9-9d5a-8df1299fe23f.png">
+
+Open Console
+
+<img width="948" alt="Screenshot 2019-04-04 23 20 21" src="https://user-images.githubusercontent.com/11307137/55601733-4178e700-5730-11e9-93d1-cd4d8584ed1d.png">
+
+Check Webex Team Space "Spark"
+
+<img width="627" alt="Screenshot 2019-04-04 23 21 34" src="https://user-images.githubusercontent.com/11307137/55601765-68cfb400-5730-11e9-8fc8-33bf5584217d.png">
+
+
+
+
+
+
+
 
 
 
