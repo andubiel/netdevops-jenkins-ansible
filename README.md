@@ -232,7 +232,7 @@ Save your Sparkbot ID it will be used later.
 
 From an editor (VIM, ATOM, Notebook++ etc) modifiy the Dev Notification to include your Sparkbot data
 ```
-[developer@centos netdevops-ansible]$cd ansible-04-mission/
+[developer@centos netdevops-jenkins-ansible]$cd ansible-04-mission/
 [developer@centos ansible-04-mission]$ls
 04-lab_cleanup.yaml  netdevops_dev.yaml   notification-dev.retry  notification-prod.yaml
 netdevops_dev.retry  netdevops_prod.yaml  notification-dev.yaml
