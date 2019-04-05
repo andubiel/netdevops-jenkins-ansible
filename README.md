@@ -141,6 +141,7 @@ Use Terminal to access your temporary admin password.
 
 ```
 Install recommended plugins.
+
 ![Picture14](https://user-images.githubusercontent.com/11307137/55590062-e0d1b600-56ff-11e9-9f98-ec63dbf3ec4d.png)
 
 Username= netdevopsuser
