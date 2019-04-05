@@ -2,6 +2,11 @@
 This lab can run "as is" using the following dcloud pod https://dcloud.cisco.com/
 Search for Devnet Express DNAv3
 
+# The Completed Lab
+Upon completion of this lab, your NetDevOps CICD Pipeline will resemble the following.
+
+<img width="835" alt="Screenshot 2019-04-04 20 32 10" src="https://user-images.githubusercontent.com/11307137/55596857-c7893380-5718-11e9-9ec5-4ae3900c9b1a.png">
+
 # VPN to POD
 Select "Info" for credentials and use Anyconect or OpenVPN to connect to POD wih SSL VPN.
 Info:
