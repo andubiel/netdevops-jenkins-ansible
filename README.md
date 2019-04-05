@@ -356,9 +356,10 @@ Open Console
 
 <img width="948" alt="Screenshot 2019-04-04 23 20 21" src="https://user-images.githubusercontent.com/11307137/55601733-4178e700-5730-11e9-93d1-cd4d8584ed1d.png">
 
-Check Webex Team Space "Spark". You will see three sets of notifications. The first set refers to the Dev code changes, while the second set refers to Production and the third verifies the dev branch  was sucesseffully merged to master.
+Check Webex Team Space "Spark". You will see three sets of notifications. The first set refers to the Dev code changes, while the second set refers to Merging changes to Master Branch. The third verifies the production branch was completed. When you make a change to the Jenkinsfile it will send the Notificsations out twice because it will run first from the Dev branch and run again from the Master Branch. If you were to change any other file other than Jenkinsfile and then commit those changes, the Pipeline would only run once.
 
-<img width="585" alt="Screenshot 2019-04-04 23 48 12" src="https://user-images.githubusercontent.com/11307137/55602532-214b2700-5734-11e9-8f0b-2d4d0f574693.png">
+<img width="457" alt="Screenshot 2019-04-05 00 23 02" src="https://user-images.githubusercontent.com/11307137/55603507-ffa06e80-5738-11e9-8603-4a2a477576a9.png">
+
 
 
 
