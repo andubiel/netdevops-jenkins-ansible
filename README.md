@@ -147,7 +147,7 @@ Install recommended plugins.
 Username= netdevopsuser
 Pass=network
 Email= netdevopsuser@netdevops.local
-Save an continue
+Save and continue
 
 ![Picture15](https://user-images.githubusercontent.com/11307137/55590132-0bbc0a00-5700-11e9-8594-129bba34fc47.png)
 
