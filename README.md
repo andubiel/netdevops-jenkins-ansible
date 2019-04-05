@@ -1,6 +1,6 @@
 # netdevops-ansible CICD Lab
 This lab can run "as is" using the following dcloud pod https://dcloud.cisco.com/
-Search for Devnet Express DNAv3
+Search for Devnet Express DNAv3. Pods in dcloud are reservable for several days.
 
 # The Completed Lab
 Upon completion of this lab, your NetDevOps CICD Pipeline will resemble the following.
