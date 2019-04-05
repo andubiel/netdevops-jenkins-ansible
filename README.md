@@ -181,6 +181,27 @@ Repository URL: http://198.18.134.48:3000/netdevopsuser/netdevops-ansible.git
 Repository Browser = GOGs
 
 # Cisco Webex Teams "Spark"
+In a new tab, navigate to https://developer.webex.com and login. If you do NOT have a Webex Teams account, sign up for a free account.
+Click on your avatar in the upper right corner, and select "My Webex Teams Apps". 
+Now click the "Plus" symbol in a green circle.
+
+![spark_bot2](https://user-images.githubusercontent.com/11307137/55596038-af171a00-5714-11e9-9454-70aeac340e03.jpg)
+
+Create your bot with the following details.
+
+Name: NetDevOps CICD Bot
+Bot Username: Any available name, indicated by green check
+Icon: Pick a default choice
+Description: DevNet CICD Lab Bot
+
+![spark_bot3](https://user-images.githubusercontent.com/11307137/55596070-d66de700-5714-11e9-8465-c0ea1016030a.jpg)
+
+After clicking "Create Bot", you'll be presented with the Bot Details. At the bottom of the details is the "Bot's Access Token". Click the button to "Copy" the token. Note: Do not mistakingly copy the "Bot ID" from the top of the page.
+
+![spark_bot4](https://user-images.githubusercontent.com/11307137/55596140-277ddb00-5715-11e9-91ec-cb240df85e4e.jpg)
+
+Paste token into a text file for safe keeping!
+
 
 Spark credentials. We need to convert our Spark Bot Token created earlier to a Jenkins credential.
 1st Select Credentials:
