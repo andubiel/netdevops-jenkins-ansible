@@ -91,7 +91,7 @@ Password for 'http://netdevopsuser@198.18.134.48:3000': network
 Branch master set up to track remote branch master from origin.
 ```
 Validate that the files are now viewable from GoGs.
-http://198.18.134.48:3000/netdevopsuser/netdevops-ansible
+http://198.18.134.48:3000/netdevopsuser/netdevops-jenkins-ansible
 
 ![Picture10](https://user-images.githubusercontent.com/11307137/55589203-ac5cfa80-56fd-11e9-8010-b85e47527e89.png)
 
