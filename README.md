@@ -66,6 +66,9 @@ Login with user netdevopsuser and password network
 
 Now add the first repository. 
 
+<img width="616" alt="Screenshot 2019-04-05 13 50 43" src="https://user-images.githubusercontent.com/11307137/55646693-da981400-57a9-11e9-9c89-3f9daf67b5e3.png">
+
+
 ![Picture8](https://user-images.githubusercontent.com/11307137/55588739-96026f00-56fc-11e9-8645-daac5bfbfbb6.png)
 
 ![Picture9](https://user-images.githubusercontent.com/11307137/55588833-ccd88500-56fc-11e9-92b7-58755f3bdb0d.png)
