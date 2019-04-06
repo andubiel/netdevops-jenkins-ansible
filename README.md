@@ -57,7 +57,10 @@ Note the following information for later:
 ```
 git config --global user.email netdevopsuser@netdevops.local
 git config --global user.name netdevopsuser
+password = network
 ```
+First you need to setup local account on this local GOGs server. Click signup now and use the above info.
+
 ![Picture6](https://user-images.githubusercontent.com/11307137/55587694-eaf0b600-56f9-11e9-91fa-dd4b180f858f.png)
 
 Login with user netdevopsuser and password network
