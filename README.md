@@ -41,7 +41,7 @@ Install docker container for Go for Git (GOGs). This will provide a Github like 
 sudo docker run --name=gogs -p 10022:22 -p 3000:3000 -v gogs-data:/data gogs/gogs
 
 When finished type $ ctrl c to stop terminal and then start the Docker container.
-docker start gogs
+sudo docker start gogs
 ```
 Setup GOGs from the web GUI. http://198.18.134.48:3000
 
