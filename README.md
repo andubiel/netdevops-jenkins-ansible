@@ -28,7 +28,7 @@ Carefull, If cut and pasting try to do one or two lines at a time and verify ok.
 ls
 code  Desktop  dev_box_background.jpg  Downloads  sync_log.txt  sync_version  thinclient_drives
 cd code
-https://github.com/andubiel/netdevops-jenkins-ansible.git
+git clone https://github.com/andubiel/netdevops-jenkins-ansible.git
 cd netdevops-jenkins-ansible/
 sudo pip install -r requirements.txt
 sudo systemctl disable firewalld
