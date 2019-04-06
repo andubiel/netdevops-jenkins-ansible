@@ -37,8 +37,8 @@ sudo systemctl stop firewalld
 # Install GOGs
 Install docker container for Go for Git (GOGs). This will provide a Github like repository for your lab environment.
 ```
-[developer@centos netdevops-ansible]$ docker volume create --name gogs-data
-docker run --name=gogs -p 10022:22 -p 3000:3000 -v gogs-data:/data gogs/gogs
+[developer@centos netdevops-ansible]$ sudo docker volume create --name gogs-data
+sudo docker run --name=gogs -p 10022:22 -p 3000:3000 -v gogs-data:/data gogs/gogs
 
 When finished type $ ctrl c to stop terminal and then start the Docker container.
 docker start gogs
