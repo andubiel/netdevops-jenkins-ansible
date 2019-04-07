@@ -127,8 +127,8 @@ We will install Jenkins directly to the Centos "DevBox".
 sudo yum install wget -y
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
-sudo yum install Jenkins -y
-[developer@centos ~]$sudo service jenkins start
+sudo yum install jenkins -y
+sudo service jenkins start
 ```
 Now use the url  http://198.18.134.48:8080 to setup Jenkins.
 
