@@ -17,7 +17,7 @@ node {
                      sh (script: "cd /var/lib/jenkins/workspace/pipeline && git checkout master")
                      sh (script: "cd /var/lib/jenkins/workspace/pipeline && git branch -u origin/master")
                      sh (script: "cd /var/lib/jenkins/workspace/pipeline && git merge origin/dev")
-		     sh (script: "cd /var/lib/jenkins/workspace/pipeline && git push http://netdevopsuser:network@198.18.134.48:3000/netdevopsuser/netdevops-ansible")        
+		     sh (script: "cd /var/lib/jenkins/workspace/pipeline && git push http://netdevopsuser:network@198.18.134.48:3000/netdevopsuser/netdevops-jenkins-ansible")        
          }
 
         stage ('Configure Production'){
