@@ -183,10 +183,12 @@ Scroll through to make the following configuration selections and click save.
 ![Picture23](https://user-images.githubusercontent.com/11307137/55590698-a0733780-5701-11e9-88cb-5bc28e3013ea.png)
 ![Picture24](https://user-images.githubusercontent.com/11307137/55590734-baad1580-5701-11e9-85a5-afd6ab52d9f8.png)
 
-Repository URL: http://198.18.134.48:3000/netdevopsuser/netdevops-jenkins-ansible.git
-Credential add Jenkins netdevopsuser
-Branch */dev
-Repository Browser = GOGs
+*Repository URL: http://198.18.134.48:3000/netdevopsuser/netdevops-jenkins-ansible.git
+*Credential add Jenkins netdevopsuser
+*Branch */dev
+*Repository Browser = GOGs
+*save and go back and review pipeline config
+
 
 # Cisco Webex Teams "Spark"
 In a new tab, navigate to https://developer.webex.com and login. If you do NOT have a Webex Teams account, sign up for a free account.
