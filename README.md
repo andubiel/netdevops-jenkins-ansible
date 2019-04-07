@@ -324,6 +324,7 @@ Click webhooks:
 ![Picture30](https://user-images.githubusercontent.com/11307137/55593198-01523e00-5709-11e9-96b1-c2756eba1a7d.png)
 
 Add webhook + Gogs:
+payload url = http://198.18.134.48:8080/gogs-webhook/?job=pipeline
 
 ![Picture31](https://user-images.githubusercontent.com/11307137/55595701-20ee6400-5713-11e9-8685-80422eda138c.png)
 
