@@ -75,6 +75,7 @@ Remove git from netdevops-jenkins-ansible directory to remove the cloned GIT con
 
 ```
 [developer@centos netdevops-jenkins-ansible]$ rm -rf .git
+rm README.md
 touch README.md
 git init
 git config --global user.email netdevopsuser@netdevopslocal
