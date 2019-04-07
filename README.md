@@ -184,6 +184,8 @@ Scroll through to make the following configuration selections and click save.
 ![Picture24](https://user-images.githubusercontent.com/11307137/55590734-baad1580-5701-11e9-85a5-afd6ab52d9f8.png)
 
 Repository URL: http://198.18.134.48:3000/netdevopsuser/netdevops-jenkins-ansible.git
+Credential add Jenkins netdevopsuser
+Branch */dev
 Repository Browser = GOGs
 
 # Cisco Webex Teams "Spark"
