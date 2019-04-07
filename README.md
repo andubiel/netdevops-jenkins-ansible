@@ -73,8 +73,6 @@ Now add the first repository.
 
 Remove git from netdevops-jenkins-ansible directory to remove the cloned GIT configuration fro GITHUB that was pulled down and start/initiialize a new repository with the GOGs repo.
 
-Try to be conservitive on the cut and paste. :)
-
 ```
 [developer@centos netdevops-jenkins-ansible]$ rm -rf .git
 touch README.md
