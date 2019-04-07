@@ -111,7 +111,7 @@ To http://198.18.134.48:3000/netdevopsuser/netdevops-jenkins-ansible.git
  #Output * [new branch]      dev -> dev
 Branch dev set up to track remote branch dev from origin.
 ```
-Verify there is now a dev branch on the GOGs repo.
+Verify there is now a dev branch on the GOGs repo. Refresh you browser if needed.
 
 ![Picture11](https://user-images.githubusercontent.com/11307137/55589385-183f6300-56fe-11e9-8841-fa552047e7bb.png)
 
