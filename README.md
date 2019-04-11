@@ -31,8 +31,7 @@ cd code
 git clone https://github.com/andubiel/netdevops-jenkins-ansible.git
 cd netdevops-jenkins-ansible/
 sudo pip install -r requirements.txt
-sudo systemctl disable firewalld
-sudo systemctl stop firewalld
+
 ```
 # Install GOGs
 Install docker container for Go for Git (GOGs). This will provide a Github like repository for your lab environment.
