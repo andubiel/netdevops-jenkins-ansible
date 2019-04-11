@@ -403,5 +403,17 @@ Make sure the .hpi 4.0 plugin installs successfully in Jenkins:
 
 <img width="676" alt="Screenshot 2019-04-10 22 33 43" src="https://user-images.githubusercontent.com/11307137/55929411-24399200-5be2-11e9-9a27-a931d55eee05.png">
 
+# Bonus 2 (Optional) Using your local laptop ansible to connect to the GOGs:
+
+```
+On your laptop:
+git clone https://github.com/andubiel/netdevops-jenkins-ansible.git
+cd netdevops-jenkins-ansible
+git config --local user.name "netdevopsuser"
+git config --local user.email "netdevopsuser@netdevops.local"
+git fetch
+git checkout dev 
+```
+
 
 
