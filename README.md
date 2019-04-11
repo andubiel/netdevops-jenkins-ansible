@@ -365,10 +365,10 @@ Check Webex Team Space "Spark". You will see three sets of notifications. The fi
 
 <img width="457" alt="Screenshot 2019-04-05 00 23 02" src="https://user-images.githubusercontent.com/11307137/55603507-ffa06e80-5738-11e9-8603-4a2a477576a9.png">
 
-## Fixing the Jenkinsfile with second build issue
+## Fixing the Jenkinsfile issue to avoid the redundant build issue
 
 ```
-git checkout master
+[developer@centos netdevops-jenkins-ansible]$ git checkout master
 git rm Jenkinsfile
 touch .gitignore
 echo 'Jenkinsfile' > .gitignore
@@ -383,4 +383,4 @@ Sometimes you have to run git push --force twice and then git checkout dev, if y
 fatal: The remote end hung up unexpectedly
 ```
 
-Any changes new changes or pipeline jobs rand from Jenkins should only run once.
+Any new changes or pipeline jobs ran from Jenkins should only run once from this point forward.
