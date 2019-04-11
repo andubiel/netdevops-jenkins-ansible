@@ -384,3 +384,10 @@ fatal: The remote end hung up unexpectedly
 ```
 
 Any new changes or pipeline jobs ran from Jenkins should only run once from this point forward.
+
+# Bonus Step: Install PyATS pllugin for Jenkins
+
+Clone PyATS plugin from Github
+
+<img width="1196" alt="Screenshot 2019-04-10 22 32 49" src="https://user-images.githubusercontent.com/11307137/55929207-38c95a80-5be1-11e9-9186-3b04dae44773.png">
+
