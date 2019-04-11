@@ -333,7 +333,7 @@ Add webhook:
 ![Picture32](https://user-images.githubusercontent.com/11307137/55595779-61e67880-5713-11e9-8222-e5830ba98e55.png)
 
 # Run Pipeline and review results
-Make sure the pipeline runs successfully by reviewing the console output and Cisco Spark Bot notifications. In order to run the pipeline we need to initiate the pipeline by making a change to code in our GOGs repository or Build the job from Jenkins. The Jenkinfile will kickoff the pipeline when dedecting changes to files. We will add a comment line to the Jenkinsfile and then commit our change to GIT to kickoff the pipeline. Run the pipeline again afterwards by simply selecting Build Now from the Jenkins GUI to kickoff the pipeline.
+Make sure the pipeline runs successfully by reviewing the console output and Cisco Spark Bot notifications. One method to run the pipeline is to initiate the pipeline by making a change to code in our GOGs repository. The Jenkinfile will kickoff the pipeline when dedecting changes to files. We create a change event by adding a comment line to the Jenkinsfile and then commit our change to GIT to kickoff the pipeline. 
 
 
 Make changes to Jenkinsfile.
@@ -361,6 +361,26 @@ Open Console
 
 <img width="948" alt="Screenshot 2019-04-04 23 20 21" src="https://user-images.githubusercontent.com/11307137/55601733-4178e700-5730-11e9-93d1-cd4d8584ed1d.png">
 
-Check Webex Team Space "Spark". You will see three sets of notifications. The first set refers to the Dev code changes, while the second set refers to Merging changes to the Master Branch. The third verifies the production changes were completed. When you make a change to the Jenkinsfile it will send the Notificsations out twice because it will run first from the Dev branch and then run again from the Master Branch. If you were to Build Now from the Jenkins dashboard it will run the Pipeline once becuase the Jenkins file was not modified.
+Check Webex Team Space "Spark". You will see three sets of notifications. The first set refers to the Dev code changes, while the second set refers to Merging changes to the Master Branch. The third verifies the production changes were completed. When you make a change to the Jenkinsfile it will send the Notifications out twice because it will run first from the Dev branch and then run again from the Master Branch. We need to remove the Jenkinsfile from the master branch to stop the redundant pipeline build.
 
 <img width="457" alt="Screenshot 2019-04-05 00 23 02" src="https://user-images.githubusercontent.com/11307137/55603507-ffa06e80-5738-11e9-8603-4a2a477576a9.png">
+
+## Fixing the Jenkinsfile with second build issue
+
+```
+git checkout master
+git rm Jenkinsfile
+touch .gitignore
+echo 'Jenkinsfile' > .gitignore
+git add .gitignore
+git commit -m 'ignore Jenkinsfile in master branch'
+git push --force
+git checkout dev
+```
+Sometimes you have to run git push --force twice and then git checkout dev, if you receive the following error:
+
+```
+fatal: The remote end hung up unexpectedly
+```
+
+Any changes new changes or pipeline jobs rand from Jenkins should only run once.
