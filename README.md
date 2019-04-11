@@ -213,6 +213,14 @@ After clicking "Create Bot", you'll be presented with the Bot Details. At the bo
 
 Paste token into a text file for safe keeping!
 
+Now we need to add a new room to webex teams and add the BOT we just created:
+
+![Screenshot 2019-04-11 14 57 18](https://user-images.githubusercontent.com/11307137/55988770-5989c280-5c6a-11e9-9211-f2ac4f364fcc.png)
+
+Add your Bot that you created above to the room:
+
+![Screenshot 2019-04-11 15 00 26](https://user-images.githubusercontent.com/11307137/55988861-95bd2300-5c6a-11e9-8273-071cdcb7bbc9.png)
+
 Next we need to search developer.webex.com to glean the RoomId from our bot. From Room scroll down until you find the Bot RoomId.
 
 <img width="955" alt="Screenshot 2019-04-04 23 07 01" src="https://user-images.githubusercontent.com/11307137/55601328-640a0080-572e-11e9-925c-9b19faf40970.png">
