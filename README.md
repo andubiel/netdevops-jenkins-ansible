@@ -47,7 +47,7 @@ Setup GOGs from the web GUI. http://198.18.134.48:3000
 Change Database to sqlite3.
 ![Picture4](https://user-images.githubusercontent.com/11307137/55587330-1c1cb680-56f9-11e9-949c-867728d5f92d.png)
 
-Change GOGs Domain to 198.18.134.48 and URL to 198.18 134.48/3000 if not already displaying and then start GOGs.
+Change GOGs Domain to 198.18.134.48 and URL to 198.18.134.48/3000 if not already displaying and then start GOGs.
 
 ![Picture5](https://user-images.githubusercontent.com/11307137/55587483-6ef66e00-56f9-11e9-9ece-5dd2d486ef59.png)
 
