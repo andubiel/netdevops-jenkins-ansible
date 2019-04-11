@@ -399,7 +399,7 @@ Goto advanced to upload .hpi plugin file:
 
 <img width="1074" alt="Screenshot 2019-04-10 22 31 31" src="https://user-images.githubusercontent.com/11307137/55929356-d91f7f00-5be1-11e9-8030-597af5487fdb.png">
 
-Make sure plugin installs in Jenkins:
+Make sure the .hpi 4.0 plugin installs successfully in Jenkins:
 
 <img width="676" alt="Screenshot 2019-04-10 22 33 43" src="https://user-images.githubusercontent.com/11307137/55929411-24399200-5be2-11e9-9a27-a931d55eee05.png">
 
