@@ -325,20 +325,23 @@ hint: counterpart. Check out this branch and merge the remote changes
 # GOGs and Jenkins Integration
 At this point we can prepare the Gogs server to integrate with the Jenkins server. Click on settings.
 
-![Picture29](https://user-images.githubusercontent.com/11307137/55593153-d962da80-5708-11e9-9440-6ca987aad600.png)
+<img width="617" alt="Screenshot 2019-04-12 14 49 04" src="https://user-images.githubusercontent.com/11307137/56059487-c9ab4d80-5d29-11e9-8a8c-b056eea3522c.png">
+
 
 Click webhooks:
 
-![Picture30](https://user-images.githubusercontent.com/11307137/55593198-01523e00-5709-11e9-96b1-c2756eba1a7d.png)
+<img width="636" alt="Screenshot 2019-04-12 14 53 10" src="https://user-images.githubusercontent.com/11307137/56059748-c9fc1680-5d32-11e9-8952-c268f3faf176.png">
 
 Add webhook + Gogs:
 payload url = http://198.18.134.48:8080/gogs-webhook/?job=pipeline
+secret = network
 
 ![Picture31](https://user-images.githubusercontent.com/11307137/55595701-20ee6400-5713-11e9-8685-80422eda138c.png)
 
 Add webhook:
 
-![Picture32](https://user-images.githubusercontent.com/11307137/55595779-61e67880-5713-11e9-8222-e5830ba98e55.png)
+<img width="630" alt="Screenshot 2019-04-12 14 58 56" src="https://user-images.githubusercontent.com/11307137/56059994-8d7cea80-5d33-11e9-8248-61cc015b7310.png">
+
 
 # Run Pipeline and review results
 Make sure the pipeline runs successfully by reviewing the console output and Cisco Spark Bot notifications. One method to run the pipeline is to initiate the pipeline by making a change to code in our GOGs repository. The Jenkinfile will kickoff the pipeline when dedecting changes to files. We create a change event by adding a comment line to the Jenkinsfile and then commit our change to GIT to kickoff the pipeline. 
