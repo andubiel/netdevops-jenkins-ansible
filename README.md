@@ -204,7 +204,7 @@ Bot Username: Any available name, indicated by green check
 Icon: Pick a default choice
 Description: DevNet CICD Lab Bot
 
-![spark_bot3](https://user-images.githubusercontent.com/11307137/55596070-d66de700-5714-11e9-8465-c0ea1016030a.jpg)
+<img width="1070" alt="Screenshot 2019-04-11 23 30 30" src="https://user-images.githubusercontent.com/11307137/56012380-e146ef80-5cb1-11e9-93a8-fcccea4f31ed.png">
 
 After clicking "Create Bot", you'll be presented with the Bot Details. At the bottom of the details is the "Bot's Access Token". Click the button to "Copy" the token.  Make sure to note the Token and not mix up with BOT ID.
 
