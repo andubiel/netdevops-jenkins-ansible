@@ -48,15 +48,15 @@ Setup GOGs from the web GUI. http://198.18.134.48:3000
 Change Database to sqlite3.
 ![Picture4](https://user-images.githubusercontent.com/11307137/55587330-1c1cb680-56f9-11e9-949c-867728d5f92d.png)
 
-Change GOGs Domain to 198.18.134.48 and URL to 198.18.134.48/3000 if not already displaying and then install GOGs.
+Change GOGs Domain to 198.18.134.48 and URL to 198.18.134.48/3000 if not already displaying and then click install GOGs.
 
 <img width="1160" alt="Screenshot 2019-04-11 22 43 30" src="https://user-images.githubusercontent.com/11307137/56010964-43502680-5cab-11e9-9a1d-fb630664ed52.png">
 
 Next sign-up for a local account on the GOGs server. Use netdevopsuser for user and network as the password.
 Note the following information for later:
 ```
-git config --global user.email netdevopsuser@netdevops.local
-git config --global user.name netdevopsuser
+user.email netdevopsuser@netdevops.local
+user.name netdevopsuser
 password = network
 ```
 First you need to setup local account on this local GOGs server. Click signup now and use the above info.
@@ -87,15 +87,15 @@ git config --global push.default matching
 git add --all
 git commit -m "files"
 git push -u origin master
-Username for 'http://198.18.134.48:3000': netdevopsuser
-Password for 'http://netdevopsuser@198.18.134.48:3000': network
-#Output * [new branch]      master -> master
-Branch master set up to track remote branch master from origin.
+#Output: Username for 'http://198.18.134.48:3000': netdevopsuser
+#Output: Password for 'http://netdevopsuser@198.18.134.48:3000': network
+#Output: * [new branch]      master -> master
+#Output: Branch master set up to track remote branch master from origin.
 ```
 Validate that the files are now viewable from GoGs.
 http://198.18.134.48:3000/netdevopsuser/netdevops-jenkins-ansible
 
-![Picture10](https://user-images.githubusercontent.com/11307137/55589203-ac5cfa80-56fd-11e9-8010-b85e47527e89.png)
+<img width="1373" alt="Screenshot 2019-04-11 22 55 44" src="https://user-images.githubusercontent.com/11307137/56011381-f8cfa980-5cac-11e9-9f7a-43595c7f3c4c.png">
 
 Now lets start a new branch to make changes to the files in a safe sandbox.
 ```
@@ -113,9 +113,9 @@ Branch dev set up to track remote branch dev from origin.
 ```
 Verify there is now a dev branch on the GOGs repo. Refresh you browser if needed.
 
-![Picture11](https://user-images.githubusercontent.com/11307137/55589385-183f6300-56fe-11e9-8841-fa552047e7bb.png)
+<img width="1136" alt="Screenshot 2019-04-11 22 58 17" src="https://user-images.githubusercontent.com/11307137/56011472-62e84e80-5cad-11e9-9052-b2dfa64301ff.png">
 
-![Picture12](https://user-images.githubusercontent.com/11307137/55589439-360cc800-56fe-11e9-9cc4-6be8ea45f212.png)
+<img width="1266" alt="Screenshot 2019-04-11 22 59 51" src="https://user-images.githubusercontent.com/11307137/56011502-8d3a0c00-5cad-11e9-8a56-452059c61d61.png">
 
 # Install Jenkins 
 We will install Jenkins directly to the Centos "DevBox".
@@ -136,10 +136,10 @@ Now use the url  http://198.18.134.48:8080 to setup Jenkins.
 
 ![Picture13](https://user-images.githubusercontent.com/11307137/55589638-bc290e80-56fe-11e9-8dfd-45a0b251261f.png)
 
-Use Terminal to access your temporary admin password.
+Use Terminal and more commad to view your temporary admin password.
 ```
 [developer@centos ~]$sudo more /var/lib/jenkins/secrets/initialAdminPassword
-#Output Copy ---> 51d0d1f031ae48fbac3dec8f27ccc917
+#Output Example "Copy your Key" ---> 51d0d1f031ae48fbac3dec8f27ccc917
 
 ```
 Install recommended plugins.
@@ -182,15 +182,13 @@ Configure a new Pipeline job, and click OK.
 
 Scroll through to make the following configuration selections and click save.
 
-![Picture23](https://user-images.githubusercontent.com/11307137/55590698-a0733780-5701-11e9-88cb-5bc28e3013ea.png)
-![Picture24](https://user-images.githubusercontent.com/11307137/55590734-baad1580-5701-11e9-85a5-afd6ab52d9f8.png)
-
-* Repository URL: http://198.18.134.48:3000/netdevopsuser/netdevops-jenkins-ansible.git
 * Credential add Jenkins netdevopsuser
 * Branch */dev
 * Repository Browser = GOGs
 * save and go back and review pipeline config
 
+![Picture23](https://user-images.githubusercontent.com/11307137/55590698-a0733780-5701-11e9-88cb-5bc28e3013ea.png)
+![Picture24](https://user-images.githubusercontent.com/11307137/55590734-baad1580-5701-11e9-85a5-afd6ab52d9f8.png)
 
 # Cisco Webex Teams "Spark"
 In a new tab, navigate to https://developer.webex.com and login. If you do NOT have a Webex Teams account, sign up for a free account.
