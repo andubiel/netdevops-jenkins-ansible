@@ -208,7 +208,7 @@ Description: DevNet CICD Lab Bot
 
 After clicking "Create Bot", you'll be presented with the Bot Details. At the bottom of the details is the "Bot's Access Token". Click the button to "Copy" the token.  Make sure to note the Token and not mix up with BOT ID.
 
-![spark_bot4](https://user-images.githubusercontent.com/11307137/55596140-277ddb00-5715-11e9-91ec-cb240df85e4e.jpg)
+<img width="847" alt="Screenshot 2019-04-11 23 34 13" src="https://user-images.githubusercontent.com/11307137/56012485-57e3ed00-5cb2-11e9-9aaa-f798124691b5.png">
 
 Paste token into a text file for safe keeping!
 
