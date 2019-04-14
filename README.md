@@ -333,12 +333,14 @@ Click webhooks:
 <img width="636" alt="Screenshot 2019-04-12 14 53 10" src="https://user-images.githubusercontent.com/11307137/56059748-c9fc1680-5d32-11e9-8952-c268f3faf176.png">
 
 Add webhook + Gogs:
-payload url = http://198.18.134.48:8080/gogs-webhook/?job=pipeline
-secret = network
+
 
 ![Picture31](https://user-images.githubusercontent.com/11307137/55595701-20ee6400-5713-11e9-8685-80422eda138c.png)
 
 Add webhook:
+payload url = http://198.18.134.48:8080/gogs-webhook/?job=pipeline
+secret = network
+
 
 <img width="630" alt="Screenshot 2019-04-12 14 58 56" src="https://user-images.githubusercontent.com/11307137/56059994-8d7cea80-5d33-11e9-8248-61cc015b7310.png">
 
