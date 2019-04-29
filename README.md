@@ -184,6 +184,7 @@ Scroll through to make the following configuration selections and click save.
 
 * Credential add Jenkins netdevopsuser
 * Branch */dev
+* Repository url = http://198.18.134.48:3000/netdevopsuser/netdevops-jenkins-ansible.git
 * Repository Browser = GOGs
 * save and go back and review pipeline config
 
