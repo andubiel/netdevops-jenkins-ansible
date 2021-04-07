@@ -1,5 +1,5 @@
 netmiko==1.4.2
 setuptools==40.8.0
-ansible==2.7.10
+ansible==2.10.0
 pip==19.0.3
 
